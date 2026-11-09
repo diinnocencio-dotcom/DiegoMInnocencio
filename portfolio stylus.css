@@ -751,8 +751,8 @@ img {
     }
 
     .serviços-info p {
-        font-size: 1.4rem;
-        line-height: 1.8;
+        font-size: 1.8rem;
+        line-height: 1.8rem;
     }
 
     .serviços-info img {
@@ -915,7 +915,7 @@ img {
     .serviços-info p,
     .projetos-card p,
     .trabalhos-educacionais-card p {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 
     .projetos-card h3 {
@@ -923,7 +923,7 @@ img {
     }
 
     .trabalhos-educacionais-card h3 {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
     }
 
     .projetos-card img,
