@@ -349,8 +349,7 @@ section{
     justify-content: center;
     text-align: center;
     width: 350px;                 /* ✅ fixed lateral size */
-    min-width: 350px;             /* ✅ prevents flex/grid from shrinking it */
-    max-width: 350px;             /* ✅ hard cap */
+    min-width: 300px;             /* ✅ prevents flex/grid from shrinking it */
     box-sizing: border-box;       /* ✅ padding + border stay inside 350px */
     background-color: var(--bg-color);
     border: 2px solid var(--main-color);
@@ -718,7 +717,8 @@ img {
     .serviços-box {
         height: auto;
         min-height: 400px;
-        max-width: 100%;
+        max-width: 300px;
+        min-width: 300px;
         padding: 1.5rem;
         border-radius: 2rem;
     }
@@ -750,7 +750,8 @@ img {
     }
 
     .projetos-card {
-        max-width: 100%;
+        min-width: 300px;             /* ✅ prevents flex/grid from shrinking it */
+        max-width: 300px;             /* ✅ hard cap */
         padding: 2rem 1.5rem;
         border-radius: 2rem;
         gap: 1.5rem;
@@ -777,7 +778,8 @@ img {
     }
 
     .trabalhos-educacionais-card {
-        max-width: 100%;
+        min-width: 300px;             /* ✅ hard cap */
+        max-width: 300px;             /* ✅ hard cap */
         padding: 2rem 1.5rem;
         border-radius: 2rem;
         gap: 1.5rem;
