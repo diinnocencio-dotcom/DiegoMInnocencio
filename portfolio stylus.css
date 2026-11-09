@@ -284,14 +284,16 @@ section{
     text-align: center;
     background-color: var(--bg-color);
     border: 2px solid var(--main-color);
-    max-width: 350px;             /* ⭐ limita a largura total do grid */
+    width: 350px;                 /* ✅ fixed lateral size */
+    min-width: 350px;             /* ✅ prevents flex/grid from shrinking it */
+    max-width: 350px;             /* ✅ hard cap */
+    box-sizing: border-box;       /* ✅ padding + border stay inside 350px */
     border-radius: 3rem;
     gap: 2rem;
     padding: 2.5rem;
     overflow: hidden;
     cursor: pointer;
     transition: 0.3s ease-in-out;
-
 }
 
 .projetos-card:hover{
@@ -346,15 +348,19 @@ section{
     align-items: center;
     justify-content: center;
     text-align: center;
+    width: 350px;                 /* ✅ fixed lateral size */
+    min-width: 350px;             /* ✅ prevents flex/grid from shrinking it */
+    max-width: 350px;             /* ✅ hard cap */
+    box-sizing: border-box;       /* ✅ padding + border stay inside 350px */
     background-color: var(--bg-color);
     border: 2px solid var(--main-color);
-    max-width: 350px;             /* ⭐ limita a largura total do grid */
     border-radius: 3rem;
     gap: 2rem;
     padding: 2.5rem;
     overflow: hidden;
     cursor: pointer;
     transition: 0.3s ease-in-out;
+   
 }
 
 .trabalhos-educacionais-card:hover{
@@ -708,11 +714,7 @@ img {
     }
 
     /* ---- SERVIÇOS ---- */
-    .serviços-container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
+    
     .serviços-box {
         height: auto;
         min-height: 400px;
