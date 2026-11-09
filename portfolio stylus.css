@@ -550,8 +550,7 @@ img {
     height: auto;
 }
 
-/* ---------- TABLETS (até 1024px) ---------- */
-@media (max-width: 1024px) {
+@media (max-width: 1500px) {
 
 .navbar{
         display: none;
@@ -613,8 +612,27 @@ img {
     width: 100%;
     }
 
+
+.serviços-container{
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        row-gap: 3rem;
+    }
+
+.projetos-box {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        row-gap: 3rem;
+    }
+
+.trabalhos-educacionais-box {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        row-gap: 3rem;
+    }
+
 }
-    
+
     /* ============================================================
    MOBILE MAIN STREAM — 375px a 480px
    iPhone 12/13/14/15, Galaxy S21+, Pixel 6+
@@ -743,13 +761,8 @@ img {
     }
 
     /* ---- PROJETOS ---- */
-    .projetos-box {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        row-gap: 3rem;
-    }
 
-    .projetos-card {
+        .projetos-card {
         min-width: 300px;             /* ✅ prevents flex/grid from shrinking it */
         max-width: 300px;             /* ✅ hard cap */
         padding: 2rem 1.5rem;
@@ -771,12 +784,7 @@ img {
     }
 
     /* ---- TRABALHOS EDUCACIONAIS ---- */
-    .trabalhos-educacionais-box {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        row-gap: 3rem;
-    }
-
+    
     .trabalhos-educacionais-card {
         min-width: 300px;             /* ✅ hard cap */
         max-width: 300px;             /* ✅ hard cap */
