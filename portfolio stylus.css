@@ -40,12 +40,6 @@ body{
     z-index: 1000;
 }
 
-#Menu-Icon{
-    font-size: 3.5rem;
-    color: var(--main-color);
-    display: none;
-}
-
 .Logo{
     font-size: 2.5rem;
     color: var(--bg-color);
@@ -137,36 +131,30 @@ section{
 
 .home-img img{
     width: 32vw;
-    height: 32vw;
-    object-fit: cover;
+    height: 32vw;                   /* ⭐ igual à largura = quadrado */
+    max-width: 400px;               /* ⭐ limite em telas grandes */
+    max-height: 400px;
+    object-fit: cover;              /* ⭐ preenche sem distorcer */
+    border-radius: 0;   
+     display: block;
     border-radius: 50%;
-    transition: 0.4s ease-in-out;
 }
 
-.home-img img:hover{
-    transform: scale(1.1);
-}
 
-.social-and-button{
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
-    font-size: 3rem;
-    padding: 1rem;
-}
 
 .home .social-icons a{
-    display: inline-flex;
+    display: inline-flex;          /* ⭐ centraliza o ícone */
     justify-content: center;
     align-items: center;
-    font-size: 3rem;
-    padding: 1rem;
+    width: 5rem;                    /* ⭐ largura fixa */
+    height: 5rem;                   /* ⭐ igual à largura = círculo perfeito */
+    font-size: 2.5rem;              /* ⭐ ajuste o ícone ao tamanho */
     background: transparent;
     border: 2px solid var(--text-color);
-    border-radius: 50%;
+    border-radius: 50%;             /* ⭐ círculo */
     color: var(--text-color);
-    margin: 3rem 0.5rem;
+    margin: 2rem .5rem;
+    padding: 0;                     /* ⭐ padding não é mais necessário */
     transition: 0.3s ease-in-out;
 }
 
@@ -227,7 +215,9 @@ section{
     justify-content: center;
     align-items: center;
     background-color: var(--main-color);
-    height: 600px;
+    height: 550px;
+    max-width: 350px;             /* ⭐ limita a largura total do grid */
+    margin: 0 auto;   
     border-radius: 3rem;
     cursor: pointer;
     border: 5px solid transparent;
@@ -247,7 +237,7 @@ section{
     justify-content: center;
     align-items: center;
     gap: 2.5rem;
-    padding: 3rem;
+    padding: 2rem;
 }
 
 .serviços-info h4{
@@ -258,8 +248,8 @@ section{
 }
 
 .serviços-info p{
-    text-align: left;
-    font-size: 1.6rem;
+    text-align: center;
+    font-size: 1.5rem;
     font-weight: 600;
     line-height: 2;
     margin: 0;
@@ -280,6 +270,7 @@ section{
 .projetos-box{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin: 0 auto;   
     place-items: center;
     gap: 3rem;
     row-gap: 5rem;
@@ -293,12 +284,14 @@ section{
     text-align: center;
     background-color: var(--bg-color);
     border: 2px solid var(--main-color);
+    max-width: 350px;             /* ⭐ limita a largura total do grid */
     border-radius: 3rem;
     gap: 2rem;
     padding: 2.5rem;
     overflow: hidden;
     cursor: pointer;
     transition: 0.3s ease-in-out;
+
 }
 
 .projetos-card:hover{
@@ -355,6 +348,7 @@ section{
     text-align: center;
     background-color: var(--bg-color);
     border: 2px solid var(--main-color);
+    max-width: 350px;             /* ⭐ limita a largura total do grid */
     border-radius: 3rem;
     gap: 2rem;
     padding: 2.5rem;
@@ -429,6 +423,7 @@ section{
 }
 
 .footer{
+    width: 100%;
     background-color: var(--main-color);
     padding: 50px 0;
 }
@@ -486,7 +481,8 @@ section{
 
 .footer .copyright{
     text-align: center;
-    margin-top: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px; 
     font-size: 16px;
     color: var(--text-color);
 }
@@ -518,6 +514,20 @@ section{
 }
 
 .projeto-pagina-video-youtube iframe{
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+.trabalhos-educacionais-pagina-video-youtube{
+    width: 100%;
+    max-width: 1120px;
+    aspect-ratio: 1120/630;
+    margin: 0; 
+}
+
+.trabalhos-educacionais-pagina-video-youtube iframe{
     width: 100%;
     height: 100%;
     border: 0;
@@ -559,40 +569,21 @@ section{
 }
 
 
-@media(max-width:1285px){
-    #Menu-Icon{
-        display: block;
-    }
+/* ---------- Port para Mobile---------- */
 
-    .navbar{
-        position: absolute;
-        top: 100%;
-        right: 0;
-        width: 50%;
-        padding: 1rem 3rem;
-        background: rgb(0, 0, 0, 0.8);
-        border-bottom-left-radius: 2rem;
-        border-left: 2px var(--main-color);
-        border-bottom: 2px solid var(--main-color);
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ---------- TABLETS (até 1024px) ---------- */
+@media (max-width: 1024px) {
+
+.navbar{
         display: none;
     }
 
-    .navbar a{
-        display: block;
-        font-size: 2rem;
-        margin: 3rem 0;
-        color: var(--text-color);
-    }
-
-    .navbar.active{
-    display: block;
-    }
-
-    .Gradient-button{
-        display: none;
-    }
-
-    .home{
+ .home{
         flex-direction: column-reverse;
         margin: 5rem 0;
         gap: 5rem;
@@ -610,8 +601,366 @@ section{
         justify-content: center;
     }
 
-    .contato form{
+        html {
+        font-size: 55%;
+    }
+
+    .header {
+        padding: 2rem 5%;
+    }
+
+    section {
+        padding: 8rem 5%;
+    }
+
+    .home {
+        gap: 5rem;
+    }
+
+    .home-content h1 {
+        font-size: 6rem;
+    }
+
+    .home-content h3 {
+        font-size: 3rem;
+    }
+
+        .heading {
+        font-size: 5.5rem;
+        margin: 3rem 0;
+    }
+
+    .home .social-icons{
+    display: flex;
+    flex-direction: row;  
+    justify-content: center;    
+    align-items: center;
+    gap: 1.5rem;                
+    width: 100%;
+    }
+
+    
+    /* ============================================================
+   MOBILE MAIN STREAM — 375px a 480px
+   iPhone 12/13/14/15, Galaxy S21+, Pixel 6+
+   ============================================================ */
+@media (max-width: 480px) {
+
+    /* ---- BASE ---- */
+    html {
+        font-size: 50%;
+    }
+
+    section {
+        padding: 8rem 5% 4rem;
+        min-height: auto;
+    }
+
+    .heading {
+        font-size: 3.8rem;
+        margin: 2rem 0;
+    }
+
+    /* ---- HEADER ---- */
+    .header {
+        padding: 1.5rem 5%;
+    }
+
+    .Logo {
+        font-size: 2rem;
+    }
+
+    /* botão currículo menor */
+    .Gradient-button {
+        display: active;
+        font-size: 1.3rem;
+        padding: 0.7rem 1.2rem;
+    }
+
+    /* ---- HOME ---- */
+    .home {
+        flex-direction: column;
+        gap: 3rem;
+        padding-top: 10rem;
+        text-align: center;
+    }
+
+    .home-content {
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    .home-content h1 {
+        font-size: 4rem;
+        line-height: 1.2;
+    }
+
+    .home-content h3 {
+        font-size: 2.2rem;
+    }
+
+    .home-content p {
+        font-size: 1.5rem;
+        line-height: 1.7;
+        padding: 0 1rem;
+    }
+
+    
+    /* botões sociais + email empilhados */
+    .social-and-button {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        width: 100%;
+        margin: 2rem auto 0;
+    }
+
+    .home .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .home .social-icons a {
+        font-size: 2.5rem;
+        padding: 0.8rem;
+        margin: 0;
+    }
+
+    .button-group {
+        justify-content: center;
+    }
+
+    .button {
+        font-size: 1.6rem;
+        padding: 1rem 2.5rem;
+    }
+
+    /* ---- SERVIÇOS ---- */
+    .serviços-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .serviços-box {
+        height: auto;
+        min-height: 400px;
+        max-width: 100%;
+        padding: 1.5rem;
+        border-radius: 2rem;
+    }
+
+    .serviços-info {
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .serviços-info h4 {
+        font-size: 2.8rem;
+    }
+
+    .serviços-info p {
+        font-size: 1.4rem;
+        line-height: 1.8;
+    }
+
+    .serviços-info img {
+        width: 90px;
+        height: 90px;
+    }
+
+    /* ---- PROJETOS ---- */
+    .projetos-box {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        row-gap: 3rem;
+    }
+
+    .projetos-card {
+        max-width: 100%;
+        padding: 2rem 1.5rem;
+        border-radius: 2rem;
+        gap: 1.5rem;
+    }
+
+    .projetos-card img {
+        max-width: 220px;
+    }
+
+    .projetos-card h3 {
+        font-size: 2.4rem;
+    }
+
+    .projetos-card p {
+        font-size: 1.4rem;
+        line-height: 1.7;
+    }
+
+    /* ---- TRABALHOS EDUCACIONAIS ---- */
+    .trabalhos-educacionais-box {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        row-gap: 3rem;
+    }
+
+    .trabalhos-educacionais-card {
+        max-width: 100%;
+        padding: 2rem 1.5rem;
+        border-radius: 2rem;
+        gap: 1.5rem;
+    }
+
+    .trabalhos-educacionais-card img {
+        max-width: 220px;
+    }
+
+    .trabalhos-educacionais-card h3 {
+        font-size: 1.9rem;
+        line-height: 1.3;
+    }
+
+    .trabalhos-educacionais-card p {
+        font-size: 1.4rem;
+        line-height: 1.7;
+    }
+
+    
+    /* ---- FOOTER ---- */
+    .footer {
+        padding: 3rem 5%;
+    }
+
+    .footer .social-icons a {
+        font-size: 2.5rem;
+        padding: 0.8rem;
+    }
+
+    .footer ul {
+        gap: 1.5rem;
+        font-size: 1.5rem;
         flex-direction: column;
     }
 
+    .footer .copyright {
+        font-size: 1.3rem;
+        margin: 1.5rem 0;
+        padding: 0 5%;
+    }
+
+    /* ---- PÁGINAS DE PROJETO ---- */
+    .trabalhos-educacionais-pagina {
+        padding: 10rem 4% 4rem;
+    }
+
+    .trabalhos-educacionais-pagina-pdf-exibir {
+        height: 70vh;
+        min-height: 400px;
+        border-radius: 1rem;
+        border-width: 2px;
+    }
+
+    .projeto-pagina-video-youtube,
+    .trabalhos-educacionais-pagina-video-youtube {
+        max-width: 100%;
+        aspect-ratio: 16/9;
+        border-radius: 1rem;
+    }
 }
+
+/* ============================================================
+   COMPACT MOBILE — 320px a 374px
+   iPhone SE (1ª geração), Galaxy A01, phones antigos
+   ============================================================ */
+@media (max-width: 374px) {
+
+    html {
+        font-size: 45%;
+    }
+
+    section {
+        padding: 7rem 4% 3rem;
+    }
+
+    .heading {
+        font-size: 3rem;
+    }
+
+    /* header compacto */
+    .header {
+        padding: 1.2rem 4%;
+    }
+
+    .Logo {
+        font-size: 1.7rem;
+    }
+
+    
+    .Gradient-button {
+        display: active;
+        font-size: 1.2rem;
+        padding: 0.6rem 1rem;
+    }
+
+        /* home */
+    .home-content h1 {
+        font-size: 3.2rem;
+    }
+
+    .home-content h3 {
+        font-size: 1.8rem;
+    }
+
+    .home-content p {
+        font-size: 1.3rem;
+    }
+
+    .home-img img {
+        width: 70vw;
+        height: 70vw;
+    }
+
+    /* botões */
+    .button {
+        font-size: 1.4rem;
+        padding: 0.8rem 2rem;
+    }
+
+    /* cards */
+    .serviços-info h4 {
+        font-size: 2.2rem;
+    }
+
+    .serviços-info p,
+    .projetos-card p,
+    .trabalhos-educacionais-card p {
+        font-size: 1.3rem;
+    }
+
+    .projetos-card h3 {
+        font-size: 2rem;
+    }
+
+    .trabalhos-educacionais-card h3 {
+        font-size: 1.6rem;
+    }
+
+    .projetos-card img,
+    .trabalhos-educacionais-card img {
+        max-width: 180px;
+    }
+
+    /* footer */
+    .footer ul {
+        gap: 1rem;
+        font-size: 1.3rem;
+    }
+
+    .footer .copyright {
+        font-size: 1.1rem;
+    }
+}
+}
+
+    
