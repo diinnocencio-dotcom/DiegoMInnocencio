@@ -640,6 +640,29 @@ img {
 
 }
 
+.trabalho-pagina-text{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
+    gap: 2rem;
+    margin: 10rem;
+    margin-bottom: 2rem;
+}
+
+.trabalho-pagina-text h1{
+    font-size: 5rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    line-height: 1;
+}
+
+.trabalho-pagina-text p{
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.8;
+}
+
     /* ============================================================
    MOBILE MAIN STREAM — 375px a 480px
    iPhone 12/13/14/15, Galaxy S21+, Pixel 6+
