@@ -287,7 +287,7 @@ section{
     width: 350px;                 /* ✅ fixed lateral size */
     min-width: 300px;             /* ✅ prevents flex/grid from shrinking it */
     max-width: 300px;             /* ✅ hard cap */
-    min-height: 600px;
+    min-height: 550px;
     box-sizing: border-box;       /* ✅ padding + border stay inside 350px */
     border-radius: 3rem;
     gap: 2rem;
